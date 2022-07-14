@@ -1,0 +1,2 @@
+# Custom VR Development Kit
+OnixVR is a Mobile based Virtual Reality developmentc kit which uses Gyroscope of any mobile device to simulate the VR environment with a stereoscopic view of the environment.
