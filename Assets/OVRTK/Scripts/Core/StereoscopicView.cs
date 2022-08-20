@@ -6,6 +6,8 @@ public class StereoscopicView : MonoBehaviour
 {
     public GameObject SterescopeSeparatorCanvas;
 
+    private GameObject OVRTKCameraRig;
+
     public const float DefaultSeparation = 0.067f;
     public const float MinSeparation = 0.01f;
     public const float MaxSeparation = 0.10f;
@@ -24,10 +26,12 @@ public class StereoscopicView : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        OVRTKCameraRig = GameObject.Find("OVRTK Camera Rig");
+
         Debug.Assert(rightCamera != null, "rightCamera can't be null!");
         Debug.Assert(leftCamera != null, "leftCamera can't be null!");
 
-        Instantiate(SterescopeSeparatorCanvas);
+        GameObject stereoscopicCanvas = Instantiate(SterescopeSeparatorCanvas);
 
         // apply fixed properties
         Initialize();

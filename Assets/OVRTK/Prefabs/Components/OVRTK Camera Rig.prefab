@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8397616415381050101}
   - component: {fileID: 8397616415381050103}
+  - component: {fileID: 3511095693992362458}
   m_Layer: 0
   m_Name: OVRTK Camera Rig
   m_TagString: Untagged
@@ -50,6 +51,26 @@ MonoBehaviour:
   rightCamera: {fileID: 8397616415833205312}
   separation: 0.067
   convergence: 5
+--- !u!114 &3511095693992362458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397616415381050100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83e4c0135b84df4bb766e0651f1c3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GManager:
+  - {fileID: 8397616415904125708}
+  - {fileID: 8397616415833205314}
+  _CameraContainer: {fileID: 8397616415381050100}
+  _GyroNotSupportedPopUp: {fileID: 6650359605381990522, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
+  enableSimulator: 1
+  verticalSpeed: 2
+  horizontalSpeed: 2
 --- !u!1 &8397616415833205326
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,10 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notifier: {fileID: 0}
   _CameraContainer: {fileID: 8397616415381050100}
-  _GyroNotSupportedPopUp: {fileID: 6650359605381990522, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
-  onDesktop: 0
-  canvasAvailable: 1
+  SimulatorEnabled: 0
 --- !u!1 &8397616415904125704
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notifier: {fileID: 0}
   _CameraContainer: {fileID: 8397616415381050100}
-  _GyroNotSupportedPopUp: {fileID: 6650359605381990522, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
-  onDesktop: 0
-  canvasAvailable: 0
+  SimulatorEnabled: 0
