@@ -68,7 +68,7 @@ MonoBehaviour:
   - {fileID: 8397616415833205314}
   _CameraContainer: {fileID: 8397616415381050100}
   _GyroNotSupportedPopUp: {fileID: 6650359605381990522, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
-  enableSimulator: 1
+  enableSimulator: 0
   verticalSpeed: 2
   horizontalSpeed: 2
 --- !u!1 &8397616415833205326
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notifier: {fileID: 0}
   _CameraContainer: {fileID: 8397616415381050100}
+  OVRTKCameraRig: {fileID: 0}
   SimulatorEnabled: 0
 --- !u!1 &8397616415904125704
 GameObject:
@@ -268,4 +269,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notifier: {fileID: 0}
   _CameraContainer: {fileID: 8397616415381050100}
+  OVRTKCameraRig: {fileID: 0}
   SimulatorEnabled: 0
