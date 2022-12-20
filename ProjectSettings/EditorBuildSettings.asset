@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/OVRTK/Scenes/360 Video/360Demo.unity
-    guid: b0b83dbbd4866204aaa38e66dcfeac87
   - enabled: 1
-    path: Assets/OVRTK/Scenes/OVRTK MR Demo.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/OVRTK/Scenes/TestScene.unity
+    guid: 948320faf21f1f444938579370440732
   m_configObjects: {}

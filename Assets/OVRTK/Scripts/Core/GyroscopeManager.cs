@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class GyroscopeManager : MonoBehaviour
 {
-    public GyroscopeStateNotifier notifier = null;
+    public GyroscopeStateNotifier stateNotifier = null;
 
     private bool GyroEnabled;
     private Gyroscope _Gyro;
 
     [SerializeField]
-    private GameObject _CameraContainer;
+    private GameObject RigContainer;
     private Quaternion _Rot;
-    [SerializeField]
-    private GameObject OVRTKCameraRig;
 
+    [HideInInspector]
     public bool SimulatorEnabled = false;
 
     private float yaw = 0.0f;
@@ -22,14 +21,6 @@ public class GyroscopeManager : MonoBehaviour
 
     private void Start()
     {
-        notifier = GameObject.Find("OVRTK Camera Rig").GetComponent<GyroscopeStateNotifier>();
-        OVRTKCameraRig = GameObject.Find("OVRTK Camera Rig");
-
-        _CameraContainer = new GameObject("Camera Container");
-        _CameraContainer.transform.position = transform.position;
-        transform.SetParent(_CameraContainer.transform);
-        _CameraContainer.transform.SetParent(OVRTKCameraRig.transform);
-
         GyroEnabled = EnableGyro();
     }
 
@@ -40,7 +31,7 @@ public class GyroscopeManager : MonoBehaviour
             _Gyro = Input.gyro;
             _Gyro.enabled = true;
 
-            _CameraContainer.transform.rotation = Quaternion.Euler(90f, 0f, 90f);
+            RigContainer.transform.rotation = Quaternion.Euler(90f, 0f, 90f);
             _Rot = new Quaternion(0, 0, 1, 0);
 
             return true;
@@ -60,8 +51,8 @@ public class GyroscopeManager : MonoBehaviour
 
     void SimulateVR()
     {
-        yaw += notifier.horizontalSpeed * Input.GetAxis("Mouse X");
-        pitch -= notifier.verticalSpeed * Input.GetAxis("Mouse Y");
+        yaw += stateNotifier.horizontalSpeed * Input.GetAxis("Mouse X");
+        pitch -= stateNotifier.verticalSpeed * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
