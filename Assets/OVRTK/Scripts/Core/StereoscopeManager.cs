@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StereoscopeInitializer : MonoBehaviour
+public class StereoscopeManager : MonoBehaviour
 {
     [SerializeField]
     private Camera leftCamera;

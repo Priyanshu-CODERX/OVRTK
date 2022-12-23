@@ -69,7 +69,6 @@ MonoBehaviour:
   GManager:
   - {fileID: 9086946363924217798}
   - {fileID: 9086946364741746727}
-  _CameraContainer: {fileID: 761392224187919501}
   _GyroNotSupportedPopUp: {fileID: 8497344719279326232, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
   enableSimulator: 0
   verticalSpeed: 2
@@ -169,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateNotifier: {fileID: 5666297426116378531}
+  StateManager: {fileID: 5666297426116378531}
   RigContainer: {fileID: 761392224187919501}
   SimulatorEnabled: 0
 --- !u!1 &9086946364741746729
@@ -259,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateNotifier: {fileID: 5666297426116378531}
+  StateManager: {fileID: 5666297426116378531}
   RigContainer: {fileID: 761392224187919501}
   SimulatorEnabled: 0
 --- !u!1001 &26914496046937727
