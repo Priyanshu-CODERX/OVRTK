@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GyroscopeStateNotifier : MonoBehaviour
+public class GyroscopeStateManager : MonoBehaviour
 {
     private bool GyroEnabled;
     private Gyroscope _Gyro;
     public GyroscopeManager[] GManager;
 
-    [SerializeField]
-    private GameObject _CameraContainer;
     private Quaternion _Rot;
 
     public GameObject _GyroNotSupportedPopUp;

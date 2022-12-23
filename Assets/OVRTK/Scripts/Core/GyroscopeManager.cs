@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GyroscopeManager : MonoBehaviour
 {
-    public GyroscopeStateNotifier stateNotifier = null;
+    public GyroscopeStateManager StateManager = null;
 
     private bool GyroEnabled;
     private Gyroscope _Gyro;
@@ -51,8 +51,8 @@ public class GyroscopeManager : MonoBehaviour
 
     void SimulateVR()
     {
-        yaw += stateNotifier.horizontalSpeed * Input.GetAxis("Mouse X");
-        pitch -= stateNotifier.verticalSpeed * Input.GetAxis("Mouse Y");
+        yaw += StateManager.horizontalSpeed * Input.GetAxis("Mouse X");
+        pitch -= StateManager.verticalSpeed * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
