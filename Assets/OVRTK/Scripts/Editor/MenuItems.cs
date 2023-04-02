@@ -8,12 +8,12 @@ public class MenuItems
     public static void AddCameraRig()
     {
         //Give the path of the object to load and cache it in a variable
-        Object playerPrefab = AssetDatabase.LoadAssetAtPath("Assets/OVRTK/Prefabs/Components/OVRTK Camera Rig.prefab", typeof(GameObject));
+        Object OVRTK_Prefab = AssetDatabase.LoadAssetAtPath("Assets/OVRTK/Prefabs/Components/OVRTK Camera Rig.prefab", typeof(GameObject));
 
-        //Instantiate prefab if it exists
-        if (playerPrefab != null)
+        //Instantiate prefab if it doesn't exists
+        if (OVRTK_Prefab != null)
         {
-            PrefabUtility.InstantiatePrefab(playerPrefab);
+            PrefabUtility.InstantiatePrefab(OVRTK_Prefab);
         }
     }
 }
