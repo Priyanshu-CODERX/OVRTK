@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class GyroscopeStateManager : MonoBehaviour
 {
-    private bool GyroEnabled;
-    private Gyroscope _Gyro;
-    public GyroscopeManager[] GManager;
+    public LoggerUtility logUtils;
+
+    public bool GyroEnabled;
+
+    public GyroscopeManager[] gyroscopeManager;
 
     private Quaternion _Rot;
 
     public GameObject _GyroNotSupportedPopUp;
 
     public bool enableSimulator;
-    private bool canvasAvailable;
 
     public float verticalSpeed = 2.0f;
     public float horizontalSpeed = 2.0f;
@@ -24,6 +26,20 @@ public class GyroscopeStateManager : MonoBehaviour
     private void Start()
     {
         GyroEnabled = EnableGyro();
+
+        if (gyroscopeManager != null)
+        {
+            if (enableSimulator)
+            {
+                gyroscopeManager[0].SimulatorEnabled = true;
+                gyroscopeManager[1].SimulatorEnabled = true;
+            }
+            else
+            {
+                gyroscopeManager[0].SimulatorEnabled = false;
+                gyroscopeManager[1].SimulatorEnabled = false;
+            }
+        }
     }
 
     private bool EnableGyro()
@@ -33,11 +49,10 @@ public class GyroscopeStateManager : MonoBehaviour
             return true;
         }
 
-        if (!enableSimulator && !canvasAvailable)
+        if (!enableSimulator)
         {
             GameObject NotifierCanvas = Instantiate(_GyroNotSupportedPopUp);
             NotifierCanvas.transform.SetParent(transform);
-            canvasAvailable = true;
         }
 
         return false;
@@ -45,19 +60,7 @@ public class GyroscopeStateManager : MonoBehaviour
 
     private void Update()
     {
-        if (GyroEnabled)
-            transform.localRotation = _Gyro.attitude * _Rot;
 
-        if (enableSimulator)
-        {
-            GManager[0].SimulatorEnabled = true;
-            GManager[1].SimulatorEnabled = true;
-        }
-        else
-        {
-            GManager[0].SimulatorEnabled = false;
-            GManager[1].SimulatorEnabled = false;
-        }
     }
 
     public void Simulate()
