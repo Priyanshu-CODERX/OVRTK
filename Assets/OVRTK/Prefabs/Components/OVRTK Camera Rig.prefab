@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9086946363924217801}
   - {fileID: 9086946364741746728}
@@ -66,11 +67,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e4c0135b84df4bb766e0651f1c3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GManager:
+  GyroEnabled: 0
+  gyroscopeManager:
   - {fileID: 9086946363924217798}
   - {fileID: 9086946364741746727}
   _GyroNotSupportedPopUp: {fileID: 8497344719279326232, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
-  enableSimulator: 0
+  enableSimulator: 1
   verticalSpeed: 2
   horizontalSpeed: 2
 --- !u!81 &761392224187919499
@@ -109,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 761392224187919500}
   m_RootOrder: 0
@@ -199,6 +202,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 761392224187919500}
   m_RootOrder: 1
@@ -362,13 +366,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f038e9795bab2d943acd55fdd2aeed4c, type: 3}
---- !u!1 &5562324977107085018 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5579616408875012261, guid: f038e9795bab2d943acd55fdd2aeed4c, type: 3}
-  m_PrefabInstance: {fileID: 26914496046937727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5562324977107085014 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5579616408875012265, guid: f038e9795bab2d943acd55fdd2aeed4c, type: 3}
+  m_PrefabInstance: {fileID: 26914496046937727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5562324977107085018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5579616408875012261, guid: f038e9795bab2d943acd55fdd2aeed4c, type: 3}
   m_PrefabInstance: {fileID: 26914496046937727}
   m_PrefabAsset: {fileID: 0}
