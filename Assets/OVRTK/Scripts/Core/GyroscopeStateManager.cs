@@ -57,17 +57,4 @@ public class GyroscopeStateManager : MonoBehaviour
 
         return false;
     }
-
-    private void Update()
-    {
-
-    }
-
-    public void Simulate()
-    {
-        yaw += horizontalSpeed * Input.GetAxis("Mouse X");
-        pitch -= verticalSpeed * Input.GetAxis("Mouse Y");
-
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-    }
 }
