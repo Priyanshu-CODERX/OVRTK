@@ -312,8 +312,6 @@ struct IOAsyncCallback_tDBBA8BBDA6B203613680E77BD4AD6320A1268388;
 struct IOAsyncResult_t667861995468DDF5B2CFED1940CC2BCEEDD2B374;
 // UnityEngine.Yoga.Logger
 struct Logger_t092B1218ED93DD47180692D5761559B2054234A0;
-// Utils.LoggerUtility
-struct LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE;
 // System.Threading.ManualResetEvent
 struct ManualResetEvent_t63959486AA41A113A4353D0BF4A68E77EBA0A158;
 // System.Text.RegularExpressions.Match
@@ -350,6 +348,8 @@ struct RegexRunnerFactory_t72373B672C7D8785F63516DDD88834F286AF41E7;
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 // UnityEngine.Shader
 struct Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692;
+// SimulationManager
+struct SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC;
 // UnityEngine.Sprite
 struct Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99;
 // UnityEngine.TextCore.Text.SpriteAsset
@@ -358,8 +358,6 @@ struct SpriteAsset_t1D3CF1D9DC350A4690CB09DE228A8B59F2F02313;
 struct String_t;
 // System.Text.StringBuilder
 struct StringBuilder_t;
-// TMPro.TMP_Text
-struct TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9;
 // UnityEngine.TextAsset
 struct TextAsset_t2C64E93DA366D9DE5A8209E1802FA4884AC1BD69;
 // UnityEngine.TextCore.Text.TextAsset
@@ -6741,8 +6739,8 @@ struct DeviceCameraManager_t32862E38528F62BBEEC826D763B39AF8D6E3C1E6_StaticField
 // GyroscopeManager
 struct GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// GyroscopeStateManager GyroscopeManager::StateManager
-	GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F* ___StateManager_4;
+	// GyroscopeStateManager GyroscopeManager::gyroscopeStateManager
+	GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F* ___gyroscopeStateManager_4;
 	// System.Boolean GyroscopeManager::GyroEnabled
 	bool ___GyroEnabled_5;
 	// UnityEngine.Gyroscope GyroscopeManager::_Gyro
@@ -6751,54 +6749,36 @@ struct GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC  : public Mono
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___RigContainer_7;
 	// UnityEngine.Quaternion GyroscopeManager::_Rot
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ____Rot_8;
-	// System.Boolean GyroscopeManager::SimulatorEnabled
-	bool ___SimulatorEnabled_9;
-	// System.Single GyroscopeManager::yaw
-	float ___yaw_10;
-	// System.Single GyroscopeManager::pitch
-	float ___pitch_11;
 };
 
 // GyroscopeStateManager
 struct GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// Utils.LoggerUtility GyroscopeStateManager::logUtils
-	LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE* ___logUtils_4;
-	// System.Boolean GyroscopeStateManager::GyroEnabled
-	bool ___GyroEnabled_5;
+	// System.Boolean GyroscopeStateManager::isGyroSupported
+	bool ___isGyroSupported_4;
 	// GyroscopeManager[] GyroscopeStateManager::gyroscopeManager
-	GyroscopeManagerU5BU5D_tBC0C00B8D716E442ABED19745C711C8327E3FA3D* ___gyroscopeManager_6;
+	GyroscopeManagerU5BU5D_tBC0C00B8D716E442ABED19745C711C8327E3FA3D* ___gyroscopeManager_5;
+	// UnityEngine.GameObject GyroscopeStateManager::_GyroNotSupportedPopUp
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____GyroNotSupportedPopUp_6;
 	// UnityEngine.Quaternion GyroscopeStateManager::_Rot
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ____Rot_7;
-	// UnityEngine.GameObject GyroscopeStateManager::_GyroNotSupportedPopUp
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____GyroNotSupportedPopUp_8;
-	// System.Boolean GyroscopeStateManager::enableSimulator
-	bool ___enableSimulator_9;
-	// System.Single GyroscopeStateManager::verticalSpeed
-	float ___verticalSpeed_10;
-	// System.Single GyroscopeStateManager::horizontalSpeed
-	float ___horizontalSpeed_11;
-	// System.Single GyroscopeStateManager::yaw
-	float ___yaw_12;
-	// System.Single GyroscopeStateManager::pitch
-	float ___pitch_13;
+	// SimulationManager GyroscopeStateManager::simulationManager
+	SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC* ___simulationManager_8;
 };
 
-// Utils.LoggerUtility
-struct LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+// SimulationManager
+struct SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// TMPro.TMP_Text Utils.LoggerUtility::LOGGER
-	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___LOGGER_4;
-	// System.Single Utils.LoggerUtility::DeltaTime
-	float ___DeltaTime_5;
-	// System.Boolean Utils.LoggerUtility::LogFPS
-	bool ___LogFPS_6;
-	// System.Boolean Utils.LoggerUtility::ViewSystemMemory
-	bool ___ViewSystemMemory_7;
-	// System.Boolean Utils.LoggerUtility::ViewGraphicsMemory
-	bool ___ViewGraphicsMemory_8;
-	// System.Boolean Utils.LoggerUtility::ViewDeviceModel
-	bool ___ViewDeviceModel_9;
+	// System.Single SimulationManager::horizontalSpeed
+	float ___horizontalSpeed_4;
+	// System.Single SimulationManager::verticalSpeed
+	float ___verticalSpeed_5;
+	// System.Boolean SimulationManager::EnableSimulator
+	bool ___EnableSimulator_6;
+	// System.Single SimulationManager::pitch
+	float ___pitch_7;
+	// System.Single SimulationManager::yaw
+	float ___yaw_8;
 };
 
 // StereoscopeManager
@@ -6816,8 +6796,10 @@ struct StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02  : public Mo
 	float ___eyeHeight_8;
 	// System.Single StereoscopeManager::eyeDepth
 	float ___eyeDepth_9;
-	// GyroscopeStateManager StereoscopeManager::gStateManager
-	GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F* ___gStateManager_10;
+	// GyroscopeStateManager StereoscopeManager::gyroscopeStateManager
+	GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F* ___gyroscopeStateManager_10;
+	// SimulationManager StereoscopeManager::simulationManager
+	SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC* ___simulationManager_11;
 };
 
 // UnityEngine.EventSystems.UIBehaviour
@@ -7835,30 +7817,27 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3468[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3469[1] = 
 {
 	static_cast<int32_t>(offsetof(CertificateHandler_t148B524FA5DB39F3ABADB181CD420FC505C33804, ___m_Ptr_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3478[2] = 
-{
-	static_cast<int32_t>(offsetof(DeviceCameraManager_t32862E38528F62BBEEC826D763B39AF8D6E3C1E6_StaticFields, ___mainCameraTexture_4)),static_cast<int32_t>(offsetof(DeviceCameraManager_t32862E38528F62BBEEC826D763B39AF8D6E3C1E6, ___renderCameraTexture_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3479[8] = 
-{
-	static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___StateManager_4)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___GyroEnabled_5)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ____Gyro_6)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___RigContainer_7)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ____Rot_8)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___SimulatorEnabled_9)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___yaw_10)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___pitch_11)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3480[10] = 
-{
-	static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___logUtils_4)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___GyroEnabled_5)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___gyroscopeManager_6)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ____Rot_7)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ____GyroNotSupportedPopUp_8)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___enableSimulator_9)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___verticalSpeed_10)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___horizontalSpeed_11)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___yaw_12)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___pitch_13)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3481[7] = 
-{
-	static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___leftCamera_4)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___rightCamera_5)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___SterescopicPanel_6)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___interpupillaryDistance_7)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___eyeHeight_8)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___eyeDepth_9)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___gStateManager_10)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3482[4] = 
-{
-	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3483[6] = 
-{
-	static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___LOGGER_4)),static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___DeltaTime_5)),static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___LogFPS_6)),static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___ViewSystemMemory_7)),static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___ViewGraphicsMemory_8)),static_cast<int32_t>(offsetof(LoggerUtility_t4B7B0281A1C39899283AA61863A9266BFF4505CE, ___ViewDeviceModel_9)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3485[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3478[3] = 
 {
 	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3490[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3483[2] = 
+{
+	static_cast<int32_t>(offsetof(DeviceCameraManager_t32862E38528F62BBEEC826D763B39AF8D6E3C1E6_StaticFields, ___mainCameraTexture_4)),static_cast<int32_t>(offsetof(DeviceCameraManager_t32862E38528F62BBEEC826D763B39AF8D6E3C1E6, ___renderCameraTexture_5)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3484[5] = 
+{
+	static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___gyroscopeStateManager_4)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___GyroEnabled_5)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ____Gyro_6)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ___RigContainer_7)),static_cast<int32_t>(offsetof(GyroscopeManager_tD4326E374D3262FE6CEBA58D9A45E9370EE684FC, ____Rot_8)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3485[5] = 
+{
+	static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___isGyroSupported_4)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___gyroscopeManager_5)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ____GyroNotSupportedPopUp_6)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ____Rot_7)),static_cast<int32_t>(offsetof(GyroscopeStateManager_t954C2C0E332463D8254AEDE420C5B658DE25058F, ___simulationManager_8)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3486[5] = 
+{
+	static_cast<int32_t>(offsetof(SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC, ___horizontalSpeed_4)),static_cast<int32_t>(offsetof(SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC, ___verticalSpeed_5)),static_cast<int32_t>(offsetof(SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC, ___EnableSimulator_6)),static_cast<int32_t>(offsetof(SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC, ___pitch_7)),static_cast<int32_t>(offsetof(SimulationManager_t5BBE3E97EDE8031A7E92E405FD8D78EBFE999CCC, ___yaw_8)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3487[8] = 
+{
+	static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___leftCamera_4)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___rightCamera_5)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___SterescopicPanel_6)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___interpupillaryDistance_7)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___eyeHeight_8)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___eyeDepth_9)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___gyroscopeStateManager_10)),static_cast<int32_t>(offsetof(StereoscopeManager_t91BE66E5F65101020A51EB2D5BC1D17D8EEB4B02, ___simulationManager_11)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3489[3] = 
 {
 	static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___IsTextualNodeBitmap_0)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___CanReadContentAsBitmap_1)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___HasValueBitmap_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3495[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3494[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};

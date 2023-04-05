@@ -22,27 +22,41 @@ public class StereoscopeManager : MonoBehaviour
     [SerializeField]
     private float eyeDepth = 0.064f;
 
-    private GyroscopeStateManager gStateManager;
-    public GyroscopeStateManager GStateManager
+    private GyroscopeStateManager gyroscopeStateManager;
+    public GyroscopeStateManager GyroscopeStateManager
     {
         get
         {
-            return gStateManager;
+            return gyroscopeStateManager;
         }
         set
         {
-            gStateManager = value;
+            gyroscopeStateManager = value;
+        }
+    }
+
+    private SimulationManager simulationManager;
+    public SimulationManager SimulationManager
+    {
+        get
+        {
+            return simulationManager;
+        }
+        set
+        {
+            simulationManager = value;
         }
     }
 
     private void Awake()
     {
-        GStateManager = GetComponent<GyroscopeStateManager>();
+        GyroscopeStateManager = GetComponent<GyroscopeStateManager>();
+        SimulationManager = GetComponent<SimulationManager>();
     }
 
     private void Start()
     {
-        if (!GStateManager.GyroEnabled)
+        if (GyroscopeStateManager.CheckGyroSupport())
         {
             SterescopicPanel.SetActive(true);
         }
