@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GyroscopeManager : MonoBehaviour
 {
+    // <summary>
+    // This script is responsible for managing the gyroscope functionality of a device and updating the rotation of a GameObject accordingly.
+    // </summary>
+
     private GyroscopeStateManager gyroscopeStateManager;
     public GyroscopeStateManager GyroscopeStateManager
     {
@@ -30,6 +34,7 @@ public class GyroscopeManager : MonoBehaviour
         EnableGyroscope();
     }
 
+    // Checks for Gyroscope Support and Enables Gyroscope Capabilites of the Device
     private void EnableGyroscope()
     {
         if (GyroscopeStateManager.CheckGyroSupport())
@@ -44,6 +49,7 @@ public class GyroscopeManager : MonoBehaviour
 
     private void Update()
     {
+        // Update the rotation of the GameObject based on the device's gyroscope and the orientation of the GameObject
         if (GyroscopeStateManager.CheckGyroSupport())
             transform.localRotation = _Gyro.attitude * _Rot;
     }

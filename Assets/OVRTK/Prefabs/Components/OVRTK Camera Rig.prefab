@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 761392224187919500}
   - component: {fileID: 1397934825224362951}
   - component: {fileID: 5666297426116378531}
+  - component: {fileID: 3649031560700094365}
   - component: {fileID: 761392224187919499}
   m_Layer: 0
   m_Name: OVRTK Camera Rig
@@ -67,14 +68,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e4c0135b84df4bb766e0651f1c3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GyroEnabled: 0
   gyroscopeManager:
   - {fileID: 9086946363924217798}
   - {fileID: 9086946364741746727}
   _GyroNotSupportedPopUp: {fileID: 8497344719279326232, guid: 66d888c4b00272747ad90fc211879e8d, type: 3}
-  enableSimulator: 1
-  verticalSpeed: 2
+--- !u!114 &3649031560700094365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761392224187919501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16cd76b1e4d0cf4f8dc1fd7ab06847b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   horizontalSpeed: 2
+  verticalSpeed: 2
+  EnableSimulator: 0
 --- !u!81 &761392224187919499
 AudioListener:
   m_ObjectHideFlags: 0
@@ -171,9 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateManager: {fileID: 5666297426116378531}
   RigContainer: {fileID: 761392224187919501}
-  SimulatorEnabled: 0
 --- !u!1 &9086946364741746729
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,9 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0feea200c8577148bd2b14b362f2dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateManager: {fileID: 5666297426116378531}
   RigContainer: {fileID: 761392224187919501}
-  SimulatorEnabled: 0
 --- !u!1001 &26914496046937727
 PrefabInstance:
   m_ObjectHideFlags: 0
