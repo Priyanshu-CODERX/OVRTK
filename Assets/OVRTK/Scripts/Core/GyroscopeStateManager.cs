@@ -30,6 +30,7 @@ public class GyroscopeStateManager : MonoBehaviour
         enableGyroNotSupportedWarning();
     }
 
+    //Checks for Gyroscope Support
     public bool CheckGyroSupport()
     {
         if (SystemInfo.supportsGyroscope)
@@ -40,6 +41,7 @@ public class GyroscopeStateManager : MonoBehaviour
         return false;
     }
 
+    // Enables Gyroscope Not Supported Prompt
     private void enableGyroNotSupportedWarning()
     {
         if (!isGyroSupported && !SimulationManager.EnableSimulator)

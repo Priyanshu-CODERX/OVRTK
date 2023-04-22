@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class StereoscopeManager : MonoBehaviour
 {
+    // <summary>
+    // This script is used to create a stereoscopic effect for a virtual reality experience. 
+    // It sets up two cameras in the scene, one for the left eye and one for the right eye, and positions them to match the distance between the user's eyes, known as the interpupillary distance. 
+    // It also includes variables for eye height and eye depth, which can be adjusted to match the user's physical characteristics.
+    // </summary>
+
     [SerializeField]
     private Camera leftCamera;
 
@@ -78,6 +84,7 @@ public class StereoscopeManager : MonoBehaviour
         ConfigureCameras();
     }
 
+    // This function is used to create two child cameras in the scene, one for the left eye and one for the right eye. It calculates the position and rotation of the cameras based on the interpupillary distance and assigns them to the leftCamera and rightCamera variables.
     private void CreateChildCameras()
     {
         // Calculate the position of the left and right cameras.
@@ -109,6 +116,7 @@ public class StereoscopeManager : MonoBehaviour
         rightCamera.transform.rotation = rightCameraRotation;
     }
 
+    // This function is used to configure the cameras for the stereoscopic effect. It sets the viewport rectangles of the left and right cameras, sets their depth, modifies their projection matrices to create the stereoscopic effect, and adjusts their position and rotation to account for the user's eye height and depth.
     private void ConfigureCameras()
     {
         // Set the viewport rectangles of the left and right cameras.

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SimulationManager : MonoBehaviour
 {
+    // <summary>
+    // The above code defines a simulation manager that simulates a 3D experience using the mouse as input. 
+    // It has three public properties for adjusting the horizontal and vertical speed of the mouse movement and a boolean flag for enabling the simulator.
+    // </summary>
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public bool EnableSimulator;
