@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is responsible for managing the gyroscope functionality of a device and updating the rotation of a GameObject accordingly.
+/// </summary>
 public class GyroscopeManager : MonoBehaviour
 {
-    /// <summary>
-    /// This script is responsible for managing the gyroscope functionality of a device and updating the rotation of a GameObject accordingly.
-    /// </summary>
-
     private GyroscopeStateManager gyroscopeStateManager;
     public GyroscopeStateManager GyroscopeStateManager
     {

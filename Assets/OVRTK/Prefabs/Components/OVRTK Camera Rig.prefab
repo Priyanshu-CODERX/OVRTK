@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1397934825224362951}
   - component: {fileID: 5666297426116378531}
   - component: {fileID: 3649031560700094365}
+  - component: {fileID: 3223435628727167195}
   - component: {fileID: 761392224187919499}
   m_Layer: 0
   m_Name: OVRTK Camera Rig
@@ -87,6 +88,20 @@ MonoBehaviour:
   horizontalSpeed: 2
   verticalSpeed: 2
   EnableSimulator: 0
+--- !u!114 &3223435628727167195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761392224187919501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ed6da50297342aaa1de23e4d398695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OVRTK_Rig: {fileID: 761392224187919501}
+  EnablePersistance: 0
 --- !u!81 &761392224187919499
 AudioListener:
   m_ObjectHideFlags: 0

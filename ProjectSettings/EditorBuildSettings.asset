@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/OVRTK/Scenes/360 Video/360Demo.unity
     guid: b0b83dbbd4866204aaa38e66dcfeac87
+  - enabled: 1
+    path: Assets/OVRTK/Scenes/OVRTK_SampleScene.unity
+    guid: 4c9b652dc705a374086c1bad6b8545ea
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2e0e21c36b1f344448b879b9110e9989, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 41bca3df2477f0a43b0a371d5991aa79, type: 2}
