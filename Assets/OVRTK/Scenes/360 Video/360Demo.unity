@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRTK Camera Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 761392224187919501, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5666297426116378531, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
       propertyPath: logUtils
       value: 

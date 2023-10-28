@@ -178,9 +178,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRTK Camera Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 3223435628727167195, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
+      propertyPath: EnablePersistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3649031560700094365, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
       propertyPath: EnableSimulator
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562324977107085019, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 054b12e31717fcc47a375fcc438085d7, type: 3}
